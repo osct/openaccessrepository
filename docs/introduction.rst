@@ -16,7 +16,7 @@ Introduction
     - Invenio 1.2.1
 
 
-.. image:: figures/oar-intro.png
+.. image:: figures/intro-oar.png
    :alt: Sci-GaIA Project
 
 
