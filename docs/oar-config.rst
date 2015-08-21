@@ -28,6 +28,7 @@ OAR Configuration
 
 ::
 
+
 	$ sudo -u www-data /opt/invenio/bin/inveniocfg --update-all
 
 
@@ -36,12 +37,15 @@ OAR Configuration
 
 ::
 
+
 	$ sudo -u www-data /opt/invenio/bin/inveniocfg --create-apache-conf
 
 
 or by manually editing virtual host configuration files 
 
 ::
+
+
 	sudo -u www-data vim /opt/invenio/etc/apache/invenio-apache-vhost*.conf.
 
 
@@ -50,6 +54,8 @@ or by manually editing virtual host configuration files
 5) You can restart your Apache server now:
 
 ::
+
+
 	$ sudo /etc/init.d/apache2 restart
 
 

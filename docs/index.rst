@@ -5,7 +5,7 @@ OAR Documentation
 ==================
 
 
-.. image:: _figures/sci-gaia.png
+.. image:: figures/sci-gaia.png
    :alt: Sci-GaIA Project
 
 
