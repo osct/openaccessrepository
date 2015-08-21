@@ -9,7 +9,7 @@ OAR Documentation
    :alt: Sci-GaIA Project
 
 
-Welcome to Invenio's documentation. 
+Welcome to OAR's documentation. 
 
 .. toctree::
     :maxdepth: 2

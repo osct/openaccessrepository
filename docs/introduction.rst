@@ -1,6 +1,6 @@
-==============================================
-Introduction to Sci-GaIA OpenAccess Repository
-==============================================
+============
+Introduction
+============
 
 
 
@@ -16,7 +16,7 @@ Introduction to Sci-GaIA OpenAccess Repository
     - Invenio 1.2.1
 
 
-.. image:: _figures/oar-intro.png
+.. image:: figures/oar-intro.png
    :alt: Sci-GaIA Project
 
 
