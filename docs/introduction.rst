@@ -16,11 +16,15 @@ Introduction
     - Invenio 1.2.1
 
 
+*OAR VM * requires: 
+
+
 .. image:: figures/intro-oar.png
    :alt: Sci-GaIA Project
-
-
-*OAR VM * requires: 
+   :scale: 50 %
+   :align: left
+ 
+ 
 
 
 

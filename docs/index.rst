@@ -1,5 +1,3 @@
-.. _getting-started:
-
 ===================
 OAR Documentation
 ==================
@@ -7,7 +5,8 @@ OAR Documentation
 
 .. image:: figures/sci-gaia.png
    :alt: Sci-GaIA Project
-
+   :scale: 50 %
+   :align: right
 
 Welcome to OAR's documentation. 
 
