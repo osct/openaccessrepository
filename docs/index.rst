@@ -1,17 +1,25 @@
-==================================
-CONFIGURATION GUIDE
-==================================
+.. _getting-started:
+
+===================
+OAR Documentation
+==================
 
 
-***********
-SUPPORT
-***********
+.. image:: _figures/sci-gaia.png
+   :alt: Sci-GaIA Project
 
 
-Please feel free to contact us any time if you have any questions or comments.
+Welcome to Invenio's documentation. 
 
- Roberto BARBERA - mailto:roberto.barbera_AT_ct.infn.it
- 
- Rita RICCERI  - mailto:rita.ricceri_AT_ct.infn.it,
- 
- Mario TORRISI  - mailto:mario.torrisi_AT_ct.infn.it,
+.. toctree::
+    :maxdepth: 2
+
+    introduction
+    virtual-machine
+    oar-config
+    oar-doi
+    oar-shibboleth
+    oar-run
+    oar-style
+    support
+
