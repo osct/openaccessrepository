@@ -19,17 +19,17 @@ About
 
 The virtual appliance contains a clone of Sci-GaIA Open Access Repositories `Sci-GaIA OAR <http://oar.sci-gaia.eu/>`_, if you'd like to install your own open access repository based on standard technologies, you can simply download this clone and deploy it on your virtualization environment.
 
-==============
-Installing OAR
-==============
+--------------
+Deploying OAR
+--------------
 
-To install your own open access repository, you can download the image from `here <http://oar.sci-gaia.eu/record/19/files/oar.sci-gaia-vm-20150819.qcow2>`_, the file size is about 10GB. In this way you download the Sci-GaIA Open Access Repository template that can be deployed on your virtualization environment. The image is in QCOW format, but can be easily converted in other format as you need, using **qemu** utils. 
+To deploy your own open access repository, you can download the image from `here <http://oar.sci-gaia.eu/record/19/files/oar.sci-gaia-vm-20150819.qcow2>`_, the file size is about 10GB. In this way you download the Sci-GaIA Open Access Repository template that can be deployed on your virtualization environment. The image is in QCOW format, but can be easily converted in other format as you need, using **qemu** utils. 
 
 .. In this guide we'll show you how to use it in a local Virtualbox environment
 
-------------
+^^^^^^^^^^^^
 First Access
-------------
+^^^^^^^^^^^^
 
 Before you can do the first access to your newly OAR installation, please `contact us <mailto: abdc@efg.it>`_ to get the default OAR template credentials. This template allows login only with keys and don't permit SSH root login, for security reasons.
 Once you get default credentials, login into the OAR installation from the virtualization environment console and perform the the following steps.
@@ -81,17 +81,17 @@ Once you get default credentials, login into the OAR installation from the virtu
     Chain OUTPUT (policy ACCEPT)
     target     prot opt source               destination
 
-===================
+-------------------
 Deployment Examples
-===================
+-------------------
 
---------------------
+^^^^^^^^^^^^^^^^^^^^
 Openstack deployment
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 VirtualBox deployment
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
     .. warning:: This deployment example is provided just for test or demostrative purposes, don't use for production environment.
     
@@ -162,15 +162,16 @@ The image is equiped with 20GB dinamically allocated disk, if you need more disk
     
     # df -Th
         
-===============
+---------------
 Troubleshooting
-===============
+---------------
 
 In this section there are some possible solutions to the problems you could face during the OAR template deployment.
 
---------------
+^^^^^^^^^^^^^^
 Disk extension 
---------------
+^^^^^^^^^^^^^^
+
 If you successfully excuted a disk extension, but when you check the size you still see the default size, problably you need to perform the **resize2fs** to enlarge the file system, as shown below that expands the disk size from 20GB to 100GB:
 
 .. code::
@@ -213,9 +214,10 @@ If you successfully excuted a disk extension, but when you check the size you st
  none           tmpfs    1001M     0 1001M   0% /run/shm
  none           tmpfs     100M     0  100M   0% /run/user
 
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Virtualbox instance doen't start
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 As noted in the VirtualBox deployment section you couldn't be able to start the Virtual Machine due to Hard Disk related problems. In this case you tray to convert the downloaded image format from QCOW2 to VDI. Following the steps to convert image format.
 
 1. Install **qemu-utils**
