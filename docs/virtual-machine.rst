@@ -66,14 +66,14 @@ Once you get default credentials, login into the OAR installation from the virtu
     target     prot opt source               destination         
     ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
     DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp flags:0x3F/0x00
-    DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp flags:!0x17/0x02 state NEW
+    DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp flags:!0x17/0x02 s...
     DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp flags:0x3F/0x3F
     ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           
     ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22
     ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:80
     ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:443
-    REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp flags:0x16/0x02 reject-with       icmp-port-unreachable
-    REJECT     all  --  0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-prohibited
+    REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp flags:0x16/0x02 re...
+    REJECT     all  --  0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-...
 
     Chain FORWARD (policy ACCEPT)
     target     prot opt source               destination         
@@ -129,7 +129,7 @@ In order to deploy the image on Virtualbox you should:
 .. figure:: figures/virt-attach-disk.png
    :align: center
    :alt: Attach oar image
-   :scale: 68%
+   :scale: 78%
    :figclass: text    
    
    Attach oar image.
@@ -168,11 +168,36 @@ Troubleshooting
 
 In this section there are some possible solutions to the problems you could face during the OAR template deployment.
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cannot access Virtual Machine 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Problem**
+
+Although you provide the right credentials you cannot access the Virtual Machine from console, see Figure Figure `5`_
+
+.. _5:
+
+.. figure:: figures/virt-error-access.png
+   :align: center
+   :alt: Error Accessing the Virtual Machine
+   :scale: 88%
+   :figclass: text 
+
+Error Accessing the Virtual Machine.
+
+**Solution**
+
+This problem is often related to the keyboard layout loaded, please check the special character typing them temporarly on the username to be sure that you are typing the right password.
+
 ^^^^^^^^^^^^^^
 Disk extension 
 ^^^^^^^^^^^^^^
 
-If you successfully excuted a disk extension, but when you check the size you still see the default size, problably you need to perform the **resize2fs** to enlarge the file system, as shown below that expands the disk size from 20GB to 100GB:
+**Problem**
+
+If you successfully excuted a disk extension, but when you check the size you still see the default size.
 
 .. code::
 
@@ -198,6 +223,12 @@ If you successfully excuted a disk extension, but when you check the size you st
     Device Boot      Start         End      Blocks   Id  System
  /dev/sda1   *        2048   204799999   102398976   83  Linux
 
+**Solution**
+
+Problably you need to perform the **resize2fs** to enlarge the file system, as shown below that expands the disk size from 20GB to 100GB:
+
+.. code::
+
  root@opendata-template:~# resize2fs /dev/sda1
  resize2fs 1.42.9 (4-Feb-2014)
  Filesystem at /dev/sda1 is mounted on /; on-line resizing required
@@ -218,7 +249,13 @@ If you successfully excuted a disk extension, but when you check the size you st
 Virtualbox instance doen't start
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As noted in the VirtualBox deployment section you couldn't be able to start the Virtual Machine due to Hard Disk related problems. In this case you tray to convert the downloaded image format from QCOW2 to VDI. Following the steps to convert image format.
+**Problem**
+
+As noted in the VirtualBox deployment section you couldn't be able to start the Virtual Machine due to Hard Disk related problems.
+
+**Solution**
+
+In this case you tray to convert the downloaded image format from QCOW2 to VDI. Following the steps to convert image format.
 
 1. Install **qemu-utils**
     
