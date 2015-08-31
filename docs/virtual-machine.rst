@@ -31,7 +31,7 @@ To deploy your own open access repository, you can download the image from `here
 First Access
 ^^^^^^^^^^^^
 
-Before you can do the first access to your newly OAR installation, please `contact us <mailto: abdc@efg.it>`_ to get the default OAR template credentials. This template allows login only with keys and don't permit SSH root login, for security reasons.
+Before you can do the first access to your newly OAR installation, please `contact us <mailto: admin@sci-gaia.eu>`_ to get the default OAR template credentials. This template allows login only with keys and don't permit SSH root login, for security reasons.
 Once you get default credentials, login into the OAR installation from the virtualization environment console and perform the the following steps.
 
 .. warning:: If you don't do this you will get hacked.
