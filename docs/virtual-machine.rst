@@ -2,11 +2,11 @@
 Virtual Machine
 ===============
 
-.. contents:: :depth: 2
+.. .. contents:: :depth: 2
 
-============
+-----
 About
-============
+-----
 
 .. sidebar:: Version Available 1.0
     :subtitle: OAR runs on
