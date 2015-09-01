@@ -95,7 +95,7 @@ VirtualBox deployment
 
     .. warning:: This deployment example is provided just for test or demostrative purposes, don't use for production environment.
     
-    .. note:: Sometimes you could experiment problems deploying OAR on Virtualbox using the provided QCOW image. In this case you can convert the disk format from qcow2 to vdi using qemu utils, as described in the troubleshooting section.
+    .. note:: Sometimes you could experiment problems deploying OAR on Virtualbox using the provided QCOW image. In this case you can convert the disk format from qcow2 to vdi using qemu utils, as described in the `Troubleshooting`_ section.
 
 In order to deploy the image on Virtualbox you should:
 
