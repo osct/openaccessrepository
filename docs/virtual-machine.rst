@@ -89,6 +89,8 @@ Deployment Examples
 Openstack deployment
 ^^^^^^^^^^^^^^^^^^^^
 
+.. _label-name
+
 ^^^^^^^^^^^^^^^^^^^^^
 VirtualBox deployment
 ^^^^^^^^^^^^^^^^^^^^^
@@ -160,7 +162,7 @@ The image is equiped with 20GB dinamically allocated disk, if you need more disk
 
 .. code::
     
-    # df -Th
+    invenio@opendata-template:~$ df -Th
         
 ---------------
 Troubleshooting
@@ -175,7 +177,7 @@ Cannot access Virtual Machine
 
 **Problem**
 
-Although you provide the right credentials you cannot access the Virtual Machine from console, see Figure Figure `5`_
+Although you provide the right credentials you cannot access the Virtual Machine from console, see Figure ``:ref:`5```
 
 .. _5:
 
@@ -183,9 +185,9 @@ Although you provide the right credentials you cannot access the Virtual Machine
    :align: center
    :alt: Error Accessing the Virtual Machine
    :scale: 88%
-   :figclass: text 
-
-Error Accessing the Virtual Machine.
+   :figclass: text
+   
+   Error Accessing the Virtual Machine.
 
 **Solution**
 
@@ -251,7 +253,7 @@ Virtualbox instance doen't start
 
 **Problem**
 
-As noted in the VirtualBox deployment section you couldn't be able to start the Virtual Machine due to Hard Disk related problems.
+As noted in the `:ref:`label-name``` section you couldn't be able to start the Virtual Machine due to Hard Disk related problems.
 
 **Solution**
 
