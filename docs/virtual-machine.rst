@@ -89,8 +89,6 @@ Deployment Examples
 Openstack deployment
 ^^^^^^^^^^^^^^^^^^^^
 
-.. _label-name
-
 ^^^^^^^^^^^^^^^^^^^^^
 VirtualBox deployment
 ^^^^^^^^^^^^^^^^^^^^^
@@ -177,7 +175,7 @@ Cannot access Virtual Machine
 
 **Problem**
 
-Although you provide the right credentials you cannot access the Virtual Machine from console, see Figure ``:ref:`5```
+Although you provide the right credentials you cannot access the Virtual Machine from console, see Figure `5`_
 
 .. _5:
 
@@ -253,7 +251,7 @@ Virtualbox instance doen't start
 
 **Problem**
 
-As noted in the ``:ref:`label-name``` section you couldn't be able to start the Virtual Machine due to Hard Disk related problems.
+As pointed in the `VirtualBox deployment`_ section you couldn't be able to start the Virtual Machine due to Hard Disk related problems.
 
 **Solution**
 
