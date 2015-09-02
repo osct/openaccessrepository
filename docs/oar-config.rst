@@ -3,6 +3,15 @@ OAR Configuration
 =================
 
 
+*About* `Invenio <http://invenio-software.org/>`_ *
+
+*Invenio* `Documentation <http://invenio-software.org/wiki/General/Documentation>`_ 
+
+Admin `*HOWTO guides* <http://invenio-demo.cern.ch/help/admin/>`_ 
+
+
+*Getting Started*
+
 
 1) If running you "Stop" bibsched queue so that no jobs are running during migration.
 
