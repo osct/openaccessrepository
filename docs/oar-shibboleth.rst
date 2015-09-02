@@ -128,4 +128,4 @@ and added the file ``external_authentication_sso_scigaia.py``
 
 in ``/opt/invenio/lib/python/invenio`` 
 
-:download:`download external_authentication_sso_scigaia.py <external_authentication_sso_scigaia.py>`_
+:download:`external_authentication_sso_scigaia.py <../external_authentication_sso_scigaia.py>`.
