@@ -4,23 +4,14 @@ OAR Configuration
 
 
 .. seealso::
+	.. hlist::
+        	:columns: 1      
 
-	About `Invenio <http://invenio-software.org/>`_
+		* About `Invenio <http://invenio-software.org/>`_ 
 
-        Invenio `Documentation <http://invenio-software.org/wiki/General/Documentation>`_
+		* Invenio `Documentation <http://invenio-software.org/wiki/General/Documentation>`_ 
 
-        Admin `HOWTO guides <http://invenio-demo.cern.ch/help/admin/>`_
-
-
-
-.. hlist::
-        :columns: 1      
-
-	* About `Invenio <http://invenio-software.org/>`_ 
-
-	* Invenio `Documentation <http://invenio-software.org/wiki/General/Documentation>`_ 
-
-	* Admin `HOWTO guides <http://invenio-demo.cern.ch/help/admin/>`_ 
+		* Admin `HOWTO guides <http://invenio-demo.cern.ch/help/admin/>`_ 
 
 
 
