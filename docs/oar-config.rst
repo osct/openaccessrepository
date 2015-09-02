@@ -14,6 +14,11 @@ OAR Configuration
         press "A"
 
 
+.. image:: figures/bibsched.png
+   :alt: bibsched script
+   :scale: 90%
+
+
 
 2) Edit your invenio-local.conf and put wanted values there:
 
