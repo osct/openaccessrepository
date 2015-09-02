@@ -3,7 +3,7 @@ Introduction
 ============
 
 
-idebar:: Version Available 1.0
+sidebar:: Version Available 1.0
     :subtitle: OAR runs on
 
     - SO Ubuntu 14.04.3 LTS
