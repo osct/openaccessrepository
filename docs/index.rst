@@ -18,7 +18,5 @@ Welcome to OAR's documentation.
     oar-config
     oar-doi
     oar-shibboleth
-    oar-run
-    oar-style
     support
 
