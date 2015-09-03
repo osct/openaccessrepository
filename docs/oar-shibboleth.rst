@@ -13,7 +13,7 @@ External Authentication: Shibboleth
 
 
 
-If your institution has setup Single Sign-On solution based on Shibboleth, here are the steps to follow in order to integrate Shibboleth with Invenio 1.2.1 as a Service Provider.
+If your institution has setup Single Sign-On solution based on SAML, here are the steps to follow in order to integrate Shibboleth with Invenio 1.2.1 as a Service Provider.
 
 
 
@@ -31,7 +31,7 @@ If your institution has setup Single Sign-On solution based on Shibboleth, here 
 
 **Configuring Shibboleth**
 
-Modified file ``/etc/shibboleth/shibboleth2.xml``
+Modify the file ``/etc/shibboleth/shibboleth2.xml`` as follows:
 
 
 
@@ -66,72 +66,12 @@ Modified file ``/etc/shibboleth/shibboleth2.xml``
 
 
 
-Modified the file ``/etc/shibboleth/attribute-map.xml``
-
-Uncomment LDAP-based attributes
-
-::
-
-		<!-- Examples of LDAP-based attributes, uncomment to use these... -->
-		<Attribute name="urn:mace:dir:attribute-def:cn" id="cn"/>
-		<Attribute name="urn:mace:dir:attribute-def:sn" id="sn"/>
-		<Attribute name="urn:mace:dir:attribute-def:givenName" id="givenName"/>
-		<Attribute name="urn:mace:dir:attribute-def:displayName" id="displayName"/>
-		<Attribute name="urn:mace:dir:attribute-def:mail" id="mail"/>
-		<Attribute name="urn:mace:dir:attribute-def:telephoneNumber" id="telephoneNumber"/>
-		<Attribute name="urn:mace:dir:attribute-def:title" id="title"/>
-		<Attribute name="urn:mace:dir:attribute-def:initials" id="initials"/>
-		<Attribute name="urn:mace:dir:attribute-def:description" id="description"/>
-		<Attribute name="urn:mace:dir:attribute-def:carLicense" id="carLicense"/>
-		<Attribute name="urn:mace:dir:attribute-def:departmentNumber" id="departmentNumber"/>
-		<Attribute name="urn:mace:dir:attribute-def:employeeNumber" id="employeeNumber"/>
-		<Attribute name="urn:mace:dir:attribute-def:employeeType" id="employeeType"/>
-		<Attribute name="urn:mace:dir:attribute-def:preferredLanguage" id="preferredLanguage"/>
-		<Attribute name="urn:mace:dir:attribute-def:manager" id="manager"/>
-		<Attribute name="urn:mace:dir:attribute-def:seeAlso" id="seeAlso"/>
-		<Attribute name="urn:mace:dir:attribute-def:facsimileTelephoneNumber" id="facsimileTelephoneNumber"/>
-		<Attribute name="urn:mace:dir:attribute-def:street" id="street"/>
-		<Attribute name="urn:mace:dir:attribute-def:postOfficeBox" id="postOfficeBox"/>
-		<Attribute name="urn:mace:dir:attribute-def:postalCode" id="postalCode"/>
-		<Attribute name="urn:mace:dir:attribute-def:st" id="st"/>
-		<Attribute name="urn:mace:dir:attribute-def:l" id="l"/>
-		<Attribute name="urn:mace:dir:attribute-def:o" id="o"/>
-		<Attribute name="urn:mace:dir:attribute-def:ou" id="ou"/>
-		<Attribute name="urn:mace:dir:attribute-def:businessCategory" id="businessCategory"/>
-		<Attribute name="urn:mace:dir:attribute-def:physicalDeliveryOfficeName" id="physicalDeliveryOfficeName"/>
-
-		<Attribute name="urn:oid:2.5.4.3" id="cn"/>
-		<Attribute name="urn:oid:2.5.4.4" id="sn"/>
-		<Attribute name="urn:oid:2.5.4.42" id="givenName"/>
-		<Attribute name="urn:oid:2.16.840.1.113730.3.1.241" id="displayName"/>
-		<Attribute name="urn:oid:0.9.2342.19200300.100.1.3" id="mail"/>
-		<Attribute name="urn:oid:2.5.4.20" id="telephoneNumber"/>
-		<Attribute name="urn:oid:2.5.4.12" id="title"/>
-		<Attribute name="urn:oid:2.5.4.43" id="initials"/>
-		<Attribute name="urn:oid:2.5.4.13" id="description"/>
-		<Attribute name="urn:oid:2.16.840.1.113730.3.1.1" id="carLicense"/>
-		<Attribute name="urn:oid:2.16.840.1.113730.3.1.2" id="departmentNumber"/>
-		<Attribute name="urn:oid:2.16.840.1.113730.3.1.3" id="employeeNumber"/>
-		<Attribute name="urn:oid:2.16.840.1.113730.3.1.4" id="employeeType"/>
-		<Attribute name="urn:oid:2.16.840.1.113730.3.1.39" id="preferredLanguage"/>
-		<Attribute name="urn:oid:0.9.2342.19200300.100.1.10" id="manager"/>
-		<Attribute name="urn:oid:2.5.4.34" id="seeAlso"/>
-		<Attribute name="urn:oid:2.5.4.23" id="facsimileTelephoneNumber"/>
-		<Attribute name="urn:oid:2.5.4.9" id="street"/>
-		<Attribute name="urn:oid:2.5.4.18" id="postOfficeBox"/>
-		<Attribute name="urn:oid:2.5.4.17" id="postalCode"/>
-		<Attribute name="urn:oid:2.5.4.8" id="st"/>
-		<Attribute name="urn:oid:2.5.4.7" id="l"/>
-		<Attribute name="urn:oid:2.5.4.10" id="o"/>
-		<Attribute name="urn:oid:2.5.4.11" id="ou"/>
-		<Attribute name="urn:oid:2.5.4.15" id="businessCategory"/>
-		<Attribute name="urn:oid:2.5.4.19" id="physicalDeliveryOfficeName"/>
-
+Modify the file ``/etc/shibboleth/attribute-map.xml`` uncommenting LDAP-based attributes
 
 
 
 Copy your certificate and key into ``/etc/shibboleth`` with name ``sp-cert.pem`` and 
-``sp-key.pem`` respectively.
+``sp-key.pem`` respectively and restart the service.
 
 ::
 
@@ -140,20 +80,23 @@ Copy your certificate and key into ``/etc/shibboleth`` with name ``sp-cert.pem``
 
 **Plugging SSO into Invenio**
 
-In order to activate the particular Shibboleth SSO authentication support you have to:
 
- 1) customize the external_authentication_sso.py file in order to support your particular system
- 2) properly setting up access_control_config.py file 
+In order to activate the particular Shibboleth SSO authentication support you should do:
+
+ 1) customizing the ``external_authentication_sso.py`` file in order to support your particular system
+ 2) properly setting up ``access_control_config.py`` file 
  3) properly configuring your Apache module and update your Apache configuration 
 
 
+For the Sci-GaIA Project the previous steps have been implemented  as follows:
 
-1) Added the file ``external_authentication_sso_scigaia.py`` in ``/opt/invenio/lib/python/invenio`` 
+
+1) Download the file ``external_authentication_sso_scigaia.py`` in ``/opt/invenio/lib/python/invenio`` 
 
 :download:`external_authentication_sso_scigaia.py <figures/external_authentication_sso_scigaia.py>`.
 
 
-2) Modified file ``access_control_config.py`` 
+2) Modify the file ``access_control_config.py`` 
  
 ::
 
@@ -187,7 +130,7 @@ In order to activate the particular Shibboleth SSO authentication support you ha
 
 	   
 
-Added new method into ``/opt/invenio/lib/python/invenio/webuser.py`` 
+Add a new method into ``/opt/invenio/lib/python/invenio/webuser.py`` 
 
 ::
 
