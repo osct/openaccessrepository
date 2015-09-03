@@ -18,6 +18,9 @@ Say your institution has setup Single Sign-On solution based on Shibboleth.
 Here are the steps to follow in order to integrate Shibboleth with Invenio 1.2.1  as a Service Provider.
 
 
+
+
+
 **Installing necessary OS packages**
 
 
@@ -27,7 +30,7 @@ Here are the steps to follow in order to integrate Shibboleth with Invenio 1.2.1
 
 
 
-**Configuring Shibboleth*
+**Configuring Shibboleth**
 
 Modified file ``/etc/shibboleth/shibboleth2.xml``
 
@@ -147,9 +150,7 @@ In order to activate the particular Shibboleth SSO authentication support you ha
 
 
 
-1) Added the file ``external_authentication_sso_scigaia.py``
-
-in ``/opt/invenio/lib/python/invenio`` 
+1) Added the file ``external_authentication_sso_scigaia.py`` in ``/opt/invenio/lib/python/invenio`` 
 
 :download:`external_authentication_sso_scigaia.py <figures/external_authentication_sso_scigaia.py>`.
 
@@ -157,6 +158,8 @@ in ``/opt/invenio/lib/python/invenio``
 2) Modified file ``access_control_config.py`` 
  
 ::
+
+
 		sudo vim /opt/invenio/lib/python/invenio/access_control_config.py 
  
 	 
@@ -172,23 +175,21 @@ in ``/opt/invenio/lib/python/invenio``
 		
 		---
 		
-			< else:
-				import external_authentication_sso_scigaia as ea_sso
-				CFG_EXTERNAL_AUTH_USING_SSO = "SCI-GAIA"
-				CFG_EXTERNAL_AUTH_DEFAULT = CFG_EXTERNAL_AUTH_USING_SSO
-				CFG_EXTERNAL_AUTH_LOGOUT_SSO = 'https://oar.sci-gaia.eu/Shibboleth.sso/Logout'
-				CFG_EXTERNAL_AUTHENTICATION = {
-				CFG_EXTERNAL_AUTH_USING_SSO : ea_sso.ExternalAuthSSOSCIGAIA(True),
-					"Local": None
-				#    "Robot": ExternalAuthRobot(enforce_external_nicknames=True, use_zlib=False),
-				#    "ZRobot": ExternalAuthRobot(enforce_external_nicknames=True, use_zlib=True)
-				}
+		< else:
+			import external_authentication_sso_scigaia as ea_sso
+			CFG_EXTERNAL_AUTH_USING_SSO = "SCI-GAIA"
+			CFG_EXTERNAL_AUTH_DEFAULT = CFG_EXTERNAL_AUTH_USING_SSO
+			CFG_EXTERNAL_AUTH_LOGOUT_SSO = 'https://oar.sci-gaia.eu/Shibboleth.sso/Logout'
+			CFG_EXTERNAL_AUTHENTICATION = {
+			CFG_EXTERNAL_AUTH_USING_SSO : ea_sso.ExternalAuthSSOSCIGAIA(True),
+				"Local": None
+			#    "Robot": ExternalAuthRobot(enforce_external_nicknames=True, use_zlib=False),
+			#    "ZRobot": ExternalAuthRobot(enforce_external_nicknames=True, use_zlib=True)
+			}
 
 	   
 
-Modified the file ```/opt/invenio/lib/python/invenio/webuser.py``
-
-Added new method 
+Added new method into ``/opt/invenio/lib/python/invenio/webuser.py`` 
 
 ::
 
@@ -206,10 +207,6 @@ Added new method
 
 		return mailgroup
 
-
-
-
-Restart apache2 
 
 ::
 
