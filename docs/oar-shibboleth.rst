@@ -13,9 +13,8 @@ External Authentication: Shibboleth
 
 
 
-Say your institution has setup Single Sign-On solution based on Shibboleth. 
+If your institution has setup Single Sign-On solution based on Shibboleth, here are the steps to follow in order to integrate Shibboleth with Invenio 1.2.1 as a Service Provider.
 
-Here are the steps to follow in order to integrate Shibboleth with Invenio 1.2.1  as a Service Provider.
 
 
 
@@ -143,10 +142,9 @@ Copy your certificate and key into ``/etc/shibboleth`` with name ``sp-cert.pem``
 
 In order to activate the particular Shibboleth SSO authentication support you have to:
 
- 1) customize the external_authentication_sso.py file in order to support your particular system;
+ 1) customize the external_authentication_sso.py file in order to support your particular system
  2) properly setting up access_control_config.py file 
- 3) properly configuring your Apache module
- 4) update your Apache configuration WRT Invenio 
+ 3) properly configuring your Apache module and update your Apache configuration 
 
 
 
@@ -160,7 +158,7 @@ In order to activate the particular Shibboleth SSO authentication support you ha
 ::
 
 
-		sudo vim /opt/invenio/lib/python/invenio/access_control_config.py 
+		#sudo vim /opt/invenio/lib/python/invenio/access_control_config.py 
  
 	 
 		> else:
@@ -226,8 +224,7 @@ Edit the file ``/opt/invenio/etc/apache/invenio-apache-vhost-ssl.conf``.
 
 Set the variables
 
- ``SSLCertificateFile`` and ``SSLCertificateKeyFile`` to your certificate and key and comment/uncomment
-depending on your apache version. Finally append the following to your virtual host::
+ ``SSLCertificateFile`` and ``SSLCertificateKeyFile`` to your certificate and key and comment/uncomment depending on your apache version. Finally append the following to your virtual host::
 
 
         <Location "/Shibboleth.sso/">
