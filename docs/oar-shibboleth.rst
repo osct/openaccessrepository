@@ -18,7 +18,7 @@ Say your institution has setup Single Sign-On solution based on Shibboleth.
 Here are the steps to follow in order to integrate Shibboleth with Invenio 1.2.1  as a Service Provider.
 
 
-**Install the following packages**
+**Installing necessary OS packages**
 
 
 ::
@@ -27,7 +27,7 @@ Here are the steps to follow in order to integrate Shibboleth with Invenio 1.2.1
 
 
 
-**Configure shibboleth**
+**Configuring Shibboleth*
 
 Modified file ``/etc/shibboleth/shibboleth2.xml``
 
@@ -134,66 +134,27 @@ Copy your certificate and key into ``/etc/shibboleth`` with name ``sp-cert.pem``
 ::
 
     # service shibd restart
-    # a2enmod ssl
+   
 
+**Plugging SSO into Invenio**
 
-**Create the Apache configuration**
+In order to activate the particular Shibboleth SSO authentication support you have to:
 
-Edit the file ``/opt/invenio/etc/apache/invenio-apache-vhost-ssl.conf``. 
-
-Set the variables
-
- ``SSLCertificateFile`` and ``SSLCertificateKeyFile`` to your certificate and key and comment/uncomment
-depending on your apache version. Finally append the following to your virtual host::
-
-
-        <Location "/Shibboleth.sso/">
-        #   SSLRequireSSL   # The modules only work using HTTPS
-        #   AuthType shibboleth
-        #   ShibRequireSession On
-        #   ShibRequireAll On
-        #   ShibExportAssertion Off
-        #   require valid-user
-        #   Allow from all
-           SetHandler shib
-        </Location>
-        <Location ~ "/youraccount/login|Shibboleth.sso/">
-           SSLRequireSSL
-           AuthType shibboleth
-           ShibRequestSetting requireSession 1
-           require valid-user
-        </Location>
-        Alias "/shibboleth" "/var/www/shibboleth"
-        <Directory "/var/www/shibboleth">
-           Options MultiViews
-           AllowOverride None
-           Order allow,deny
-           Allow from all
-        </Directory>
-
-
-Enable the site:
-
-::
-
-
-    # a2ensite invenio-ssl
-    # service apache2 restart
+ 1) customize the external_authentication_sso.py file in order to support your particular system;
+ 2) properly setting up access_control_config.py file 
+ 3) properly configuring your Apache module
+ 4) update your Apache configuration WRT Invenio 
 
 
 
-The **plugin to enable for Shibboleth** is called external_authentication_sso.py and can be found under /opt/invenio/lib/python/invenio in the system-wide installation.
-
-
-Added the file ``external_authentication_sso_scigaia.py``
+1) Added the file ``external_authentication_sso_scigaia.py``
 
 in ``/opt/invenio/lib/python/invenio`` 
 
 :download:`external_authentication_sso_scigaia.py <figures/external_authentication_sso_scigaia.py>`.
 
 
-In a similar way the file ``access_control_config.py`` need to be adapted in order to enable the above mentioned plugin.
-
+2) Modified file ``access_control_config.py`` 
  
 ::
 		sudo vim /opt/invenio/lib/python/invenio/access_control_config.py 
@@ -253,6 +214,57 @@ Restart apache2
 ::
 
 		# service apache2 restart
+
+
+
+3) Apache configuration
+
+::
+
+
+	 # a2enmod ssl
+
+
+Edit the file ``/opt/invenio/etc/apache/invenio-apache-vhost-ssl.conf``. 
+
+Set the variables
+
+ ``SSLCertificateFile`` and ``SSLCertificateKeyFile`` to your certificate and key and comment/uncomment
+depending on your apache version. Finally append the following to your virtual host::
+
+
+        <Location "/Shibboleth.sso/">
+        #   SSLRequireSSL   # The modules only work using HTTPS
+        #   AuthType shibboleth
+        #   ShibRequireSession On
+        #   ShibRequireAll On
+        #   ShibExportAssertion Off
+        #   require valid-user
+        #   Allow from all
+           SetHandler shib
+        </Location>
+        <Location ~ "/youraccount/login|Shibboleth.sso/">
+           SSLRequireSSL
+           AuthType shibboleth
+           ShibRequestSetting requireSession 1
+           require valid-user
+        </Location>
+        Alias "/shibboleth" "/var/www/shibboleth"
+        <Directory "/var/www/shibboleth">
+           Options MultiViews
+           AllowOverride None
+           Order allow,deny
+           Allow from all
+        </Directory>
+
+
+Enable the site:
+
+::
+
+
+    # a2ensite invenio-ssl
+    # service apache2 restart
 
 
 
