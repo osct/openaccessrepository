@@ -8,6 +8,6 @@ If you would like to change the DOI/PID Prefix
 ::
 
 	cd /opt/invenio/var/www/form
-	sudo -u www-data vim request_doi.py
+	sudo vim request_doi.py
         
 
