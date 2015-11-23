@@ -34,11 +34,13 @@ where <repo-name> is the name you want to give to your repository.
 
 Once done, please send the following email
 
-*Send to*: <handles@sci-gaia.eu>
-
-*Subject*: OAR <repo-name> - new sub-prefix
 
 ::
+	
+	*Send to*: <handles@sci-gaia.eu>
+
+	*Subject*: OAR <repo-name> - new sub-prefix
+
 
 	Dear Handle Server Administrators,
 
@@ -55,11 +57,13 @@ Once done, please send the following email
 
 Once accepted, for each new record, send the following email:
 
-*Send to*: <handles@sci-gaia.eu>
-
-*Subject*: OAR <repo-name> - new PID
-
 ::
+
+	
+	*Send to*: <handles@sci-gaia.eu>
+
+	*Subject*: OAR <repo-name> - new PID
+
 
 	Dear Handle Server Administrators,
 
@@ -73,5 +77,3 @@ Once accepted, for each new record, send the following email:
 	Best regards,
 
 	The Librarian of the <repo-name> Open Access Repository
-
-
