@@ -36,8 +36,9 @@ If you would like to change the DOI/PID Prefix
 
 template email 
 
-Send to: <handles@sci-gaia.eu>
-Subject: OAR Repo-NAME - new PID
+*Send to*: <handles@sci-gaia.eu>
+
+*Subject*: OAR Repo-NAME - new PID
 
 ::
 
