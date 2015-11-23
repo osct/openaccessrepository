@@ -8,12 +8,12 @@ Virtual Machine
 About
 -----
 
-.. sidebar:: Version Available 1.0
+.. sidebar:: Version Available 1.1
     :subtitle: OAR runs on
 
     - SO Ubuntu 14.04.3 LTS
     - Python 2.7.6
-    - Mysql Ver 14.14 Distrib 5.5.44
+    - Mysql Ver 14.14 Distrib 5.5.46
     - Invenio 1.2.1
 
 
@@ -23,7 +23,7 @@ The virtual appliance contains a clone of Sci-GaIA Open Access Repositories `Sci
 Deploying OAR
 --------------
 
-To deploy your own open access repository, you can download the image from `here <http://oar.sci-gaia.eu/record/19/files/oar.sci-gaia-vm-20150819.qcow2>`_, the file size is about 10GB. In this way you download the Sci-GaIA Open Access Repository template that can be deployed on your virtualization environment. The image is in QCOW format, but can be easily converted in other format as you need, using **qemu** utils. 
+To deploy your own open access repository, you can download the image from `here <http://oar.sci-gaia.eu/record/19/files/oar-scigaia-template.qcow2>`_, the file size is about 10GB. In this way you download the Sci-GaIA Open Access Repository template that can be deployed on your virtualization environment. The image is in QCOW format, but can be easily converted in other format as you need, using **qemu** utils. 
 
 .. In this guide we'll show you how to use it in a local Virtualbox environment
 
@@ -89,6 +89,49 @@ Deployment Examples
 Openstack deployment
 ^^^^^^^^^^^^^^^^^^^^
 
+This section shows how to the deploy the OAR image template on an `Openstack <https://www.openstack.org/>`_ Cloud Infrastructure.
+
+.. note:: The steps below are executed using **Openstack Dashboard**, if you cannot access Openstack Dashboard, you can issue the equivalent Command Line Interface commands.
+
+1. Create a new image in the image service, clicking the *Images* link in the left side menu and then click *Create Image* button
+2. Fill all fields with your desidered values (see Figure `1`_ as example) and then click *Save* button.
+
+.. _1:
+
+.. figure:: figures/create-image.png
+   :align: center
+   :alt: New Image
+   :scale: 70%
+   :figclass: text    
+   
+   Create new image.
+
+3. Once the image becomes ready, create a new instance: 
+    a. Click *Instances* link in the left side menu.
+    b. Click *Launch Instance* button.
+4. Fill all fields with your desidered values for all tabs (see Figure `2`_ as example) and then click *Save* button.
+
+.. _2:
+
+.. figure:: figures/instance.png
+   :align: center
+   :alt: New Instance
+   :scale: 75%
+   :figclass: text    
+   
+   Create new image.
+
+5. Wait until the new instaces *Power State* becomes *Running*.
+6. Open the instance console, and follow the `First Access`_ steps.
+
+.. figure:: figures/instance-ready.png
+   :align: center
+   :alt: Instance ready
+   :scale: 75%
+   :figclass: text    
+   
+   Create new image.
+
 ^^^^^^^^^^^^^^^^^^^^^
 VirtualBox deployment
 ^^^^^^^^^^^^^^^^^^^^^
@@ -99,12 +142,12 @@ VirtualBox deployment
 
 In order to deploy the image on Virtualbox you should:
 
-1. create a new vitual machine (see Figure `1`_) specifing your machine name, OS type anchitecture, then click *Next* button;
-2. specify the machine RAM size, use at least 2GB of RAM (see Figure `2`_), click *Next* button;
-3. attach the downloaded image as disk (see Figure `3`_);
+1. create a new vitual machine (see Figure `3`_) specifing your machine name, OS type anchitecture, then click *Next* button;
+2. specify the machine RAM size, use at least 2GB of RAM (see Figure `4`_), click *Next* button;
+3. attach the downloaded image as disk (see Figure `5`_);
 4. finally start the virtual machine. It may take some time before start, depends on your hardware.
 
-.. _1:
+.. _3:
 
 .. figure:: figures/virt-new-vm.png
    :align: center
@@ -114,7 +157,7 @@ In order to deploy the image on Virtualbox you should:
    
    Create new Virtual Machine.
    
-.. _2:
+.. _4:
 
 .. figure:: figures/virt-set-RAM.png
    :align: center
@@ -124,7 +167,7 @@ In order to deploy the image on Virtualbox you should:
    
    Specifiy the RAM size.
    
-.. _3:
+.. _5:
 
 .. figure:: figures/virt-attach-disk.png
    :align: center
@@ -134,9 +177,9 @@ In order to deploy the image on Virtualbox you should:
    
    Attach oar image.
 
-Once the virtual machine is up and running provide the default credentials to login into (see Figure `4`_).
+Once the virtual machine is up and running provide the default credentials to login into (see Figure `6`_).
 
-.. _4:
+.. _6:
 
 .. figure:: figures/virt-opendata-template.png
    :align: center
@@ -175,9 +218,9 @@ Cannot access Virtual Machine
 
 **Problem**
 
-Although you provide the right credentials you cannot access the Virtual Machine from console, see Figure `5`_
+Although you provide the right credentials you cannot access the Virtual Machine from console, see Figure `7`_
 
-.. _5:
+.. _7:
 
 .. figure:: figures/virt-error-access.png
    :align: center
