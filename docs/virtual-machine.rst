@@ -25,7 +25,7 @@ Deploying OAR
 
 To deploy your own open access repository, you can download the image from `here <http://oar.sci-gaia.eu/record/19/files/oar-scigaia-template.qcow2>`_, the file size is about 10GB. In this way you download the Sci-GaIA Open Access Repository template that can be deployed on your virtualization environment. The image is in QCOW format, but can be easily converted in other format as you need, using **qemu** utils. 
 
-In this guide we'll show you, as examples. how to use virtual appliance template in a Openstack based cloud infrastructure and in a local Virtualbox environment.
+This guide shows you two examples of how to use virtual appliance template in a Openstack based cloud infrastructure and in a local Virtualbox environment.
 
 ^^^^^^^^^^^^
 First Access
