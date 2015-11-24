@@ -25,7 +25,7 @@ Deploying OAR
 
 To deploy your own open access repository, you can download the image from `here <http://oar.sci-gaia.eu/record/19/files/oar-scigaia-template.qcow2>`_, the file size is about 10GB. In this way you download the Sci-GaIA Open Access Repository template that can be deployed on your virtualization environment. The image is in QCOW format, but can be easily converted in other format as you need, using **qemu** utils. 
 
-.. In this guide we'll show you how to use it in a local Virtualbox environment
+In this guide we'll show you, as examples. how to use virtual appliance template in a Openstack based cloud infrastructure and in a local Virtualbox environment.
 
 ^^^^^^^^^^^^
 First Access
@@ -38,7 +38,7 @@ Once you get default credentials, login into the OAR installation from the virtu
 
 1. Add your ssh public keys to the invenio user
 
-.. note:: You can use your preferred way to do this stuff. For example , if you maintain your public keys with the github service you can do the following:
+.. note:: You can use your preferred way to do this stuff. For example, if you maintain your public keys with the github service you can do the following:
 
     - wget https://github.com/<github_username>.keys
     - mv <github_username>.keys .ssh/authorized_keys
@@ -57,7 +57,7 @@ Once you get default credentials, login into the OAR installation from the virtu
      Get cloud support with Ubuntu Advantage Cloud Guest:
         http://www.ubuntu.com/business/services/cloud
         
-3. Setup firewall according yoursecurity requirements, the default rules applied to the the template are the following:
+3. Setup firewall according your security requirements, the default rules applied to the the template are the following:
 
 .. code::
 
@@ -89,9 +89,9 @@ Deployment Examples
 Openstack deployment
 ^^^^^^^^^^^^^^^^^^^^
 
-This section shows how to the deploy the OAR image template on an `Openstack <https://www.openstack.org/>`_ Cloud Infrastructure.
+This section shows how to the deploy the OAR image template on an `Openstack <https://www.openstack.org/>`_  cloud based infrastructure.
 
-.. note:: The steps below are executed using **Openstack Dashboard**, if you cannot access Openstack Dashboard, you can issue the equivalent Command Line Interface commands.
+.. note:: The steps below describe the process using the **Openstack Dashboard**, if you cannot access Openstack Dashboard, you can issue the equivalent Command Line Interface commands.
 
 1. Create a new image in the image service, clicking the *Images* link in the left side menu and then click *Create Image* button
 2. Fill all fields with your desidered values (see Figure `1`_ as example) and then click *Save* button.
@@ -106,6 +106,8 @@ This section shows how to the deploy the OAR image template on an `Openstack <ht
    
    Create new image.
 
+.. note:: Pay attention to *Minimun disk* value: the OAR template require at least 20GB.
+
 3. Once the image becomes ready, create a new instance: 
     a. Click *Instances* link in the left side menu.
     b. Click *Launch Instance* button.
@@ -119,7 +121,7 @@ This section shows how to the deploy the OAR image template on an `Openstack <ht
    :scale: 75%
    :figclass: text    
    
-   Create new image.
+   Create new instance.
 
 5. Wait until the new instaces *Power State* becomes *Running*.
 6. Open the instance console, and follow the `First Access`_ steps.
@@ -130,7 +132,7 @@ This section shows how to the deploy the OAR image template on an `Openstack <ht
    :scale: 75%
    :figclass: text    
    
-   Create new image.
+   OAR instance console.
 
 ^^^^^^^^^^^^^^^^^^^^^
 VirtualBox deployment
