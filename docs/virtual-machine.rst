@@ -8,7 +8,7 @@ Virtual Machine
 About
 -----
 
-.. sidebar:: Version Available 1.1
+.. sidebar:: Version Available 1.2
     :subtitle: OAR runs on
 
     - SO Ubuntu 14.04.3 LTS
@@ -23,7 +23,7 @@ The virtual appliance contains a clone of Sci-GaIA Open Access Repositories `Sci
 Deploying OAR
 --------------
 
-To deploy your own open access repository, you can download the image from `here <http://oar.sci-gaia.eu/record/19/files/oar-scigaia-template.qcow2>`_, the file size is about 10GB. In this way you download the Sci-GaIA Open Access Repository template that can be deployed on your virtualization environment. The image is in QCOW format, but can be easily converted in other format as you need, using **qemu** utils. 
+To deploy your own open access repository, you can download the image from `here <http://oar.sci-gaia.eu/record/19/files/oar-scigaia-template.qcow2>`_, the file size is about 10GB. In this way you download the Sci-GaIA Open Access Repository template that can be deployed on your virtualization environment. The image is in QCOW format, but can be easily converted in other format as you need, using **qemu** utils.
 
 This guide shows you two examples of how to use virtual appliance template in a Openstack based cloud infrastructure and in a local Virtualbox environment.
 
@@ -43,10 +43,10 @@ Once you get default credentials, login into the OAR installation from the virtu
     - wget https://github.com/<github_username>.keys
     - mv <github_username>.keys .ssh/authorized_keys
 
-2. Test remote login: 
+2. Test remote login:
 
 .. code::
-    
+
     ssh invenio@<oar_ip_address>
     Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-62-generic x86_64)
 
@@ -56,19 +56,19 @@ Once you get default credentials, login into the OAR installation from the virtu
 
      Get cloud support with Ubuntu Advantage Cloud Guest:
         http://www.ubuntu.com/business/services/cloud
-        
+
 3. Setup firewall according your security requirements, the default rules applied to the the template are the following:
 
 .. code::
 
     sudo iptables -L -n
     Chain INPUT (policy DROP)
-    target     prot opt source               destination         
+    target     prot opt source               destination
     ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
     DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp flags:0x3F/0x00
     DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp flags:!0x17/0x02 s...
     DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp flags:0x3F/0x3F
-    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           
+    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
     ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22
     ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:80
     ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:443
@@ -76,7 +76,7 @@ Once you get default credentials, login into the OAR installation from the virtu
     REJECT     all  --  0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-...
 
     Chain FORWARD (policy ACCEPT)
-    target     prot opt source               destination         
+    target     prot opt source               destination
 
     Chain OUTPUT (policy ACCEPT)
     target     prot opt source               destination
@@ -102,13 +102,13 @@ This section shows how to the deploy the OAR image template on an `Openstack <ht
    :align: center
    :alt: New Image
    :scale: 70%
-   :figclass: text    
-   
+   :figclass: text
+
    Create new image.
 
 .. note:: Pay attention to *Minimun disk* value: the OAR template require at least 20GB.
 
-3. Once the image becomes ready, create a new instance: 
+3. Once the image becomes ready, create a new instance:
     a. Click *Instances* link in the left side menu.
     b. Click *Launch Instance* button.
 4. Fill all fields with your desidered values for all tabs (see Figure `2`_ as example) and then click *Save* button.
@@ -119,8 +119,8 @@ This section shows how to the deploy the OAR image template on an `Openstack <ht
    :align: center
    :alt: New Instance
    :scale: 75%
-   :figclass: text    
-   
+   :figclass: text
+
    Create new instance.
 
 5. Wait until the new instaces *Power State* becomes *Running*.
@@ -130,8 +130,8 @@ This section shows how to the deploy the OAR image template on an `Openstack <ht
    :align: center
    :alt: Instance ready
    :scale: 75%
-   :figclass: text    
-   
+   :figclass: text
+
    OAR instance console.
 
 ^^^^^^^^^^^^^^^^^^^^^
@@ -139,7 +139,7 @@ VirtualBox deployment
 ^^^^^^^^^^^^^^^^^^^^^
 
     .. warning:: This deployment example is provided just for test or demostrative purposes, don't use for production environment.
-    
+
     .. note:: Sometimes you could experiment problems deploying OAR on Virtualbox using the provided QCOW image. In this case you can convert the disk format from qcow2 to vdi using qemu utils, as described in the `Troubleshooting`_ section.
 
 In order to deploy the image on Virtualbox you should:
@@ -155,28 +155,28 @@ In order to deploy the image on Virtualbox you should:
    :align: center
    :alt: New Virtual Machine
    :scale: 88%
-   :figclass: text    
-   
+   :figclass: text
+
    Create new Virtual Machine.
-   
+
 .. _4:
 
 .. figure:: figures/virt-set-RAM.png
    :align: center
    :alt: Set RAM size
    :scale: 88%
-   :figclass: text    
-   
+   :figclass: text
+
    Specifiy the RAM size.
-   
+
 .. _5:
 
 .. figure:: figures/virt-attach-disk.png
    :align: center
    :alt: Attach oar image
    :scale: 78%
-   :figclass: text    
-   
+   :figclass: text
+
    Attach oar image.
 
 Once the virtual machine is up and running provide the default credentials to login into (see Figure `6`_).
@@ -187,8 +187,8 @@ Once the virtual machine is up and running provide the default credentials to lo
    :align: center
    :alt: OAR template
    :scale: 88%
-   :figclass: text    
-   
+   :figclass: text
+
    OAR template console.
 
 The image is equiped with 20GB dinamically allocated disk, if you need more disk space you can perform the following commmands:
@@ -196,17 +196,17 @@ The image is equiped with 20GB dinamically allocated disk, if you need more disk
 1. shtdown the Virtual machine;
 2. from your guest system perform the **VBoxManage modifyhd** specifying the new Hard disk size in MB:
 
-.. code:: 
+.. code::
 
     VBoxManage modifyhd /path/to/the/oar.sci-gaia-vm-20150819.vdi --resize <new_size(MB)>
     0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
 
-3. restart the Virtual Machine, login into and check the disk size using: 
+3. restart the Virtual Machine, login into and check the disk size using:
 
 .. code::
-    
+
     invenio@opendata-template:~$ df -Th
-        
+
 ---------------
 Troubleshooting
 ---------------
@@ -215,7 +215,7 @@ In this section there are some possible solutions to the problems you could face
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Cannot access Virtual Machine 
+Cannot access Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Problem**
@@ -229,7 +229,7 @@ Although you provide the right credentials you cannot access the Virtual Machine
    :alt: Error Accessing the Virtual Machine
    :scale: 88%
    :figclass: text
-   
+
    Error Accessing the Virtual Machine.
 
 **Solution**
@@ -237,7 +237,7 @@ Although you provide the right credentials you cannot access the Virtual Machine
 This problem is often related to the keyboard layout loaded, please check the special character typing them temporarly on the username to be sure that you are typing the right password.
 
 ^^^^^^^^^^^^^^
-Disk extension 
+Disk extension
 ^^^^^^^^^^^^^^
 
 **Problem**
@@ -255,7 +255,7 @@ If you successfully excuted a disk extension, but when you check the size you st
  none           tmpfs     5.0M     0  5.0M   0% /run/lock
  none           tmpfs    1001M     0 1001M   0% /run/shm
  none           tmpfs     100M     0  100M   0% /run/user
- 
+
  root@opendata-template:~# fdisk -l
 
  Disk /dev/sda: 104.9 GB, 104857600000 bytes
@@ -303,11 +303,11 @@ As pointed in the `VirtualBox deployment`_ section you couldn't be able to start
 In this case you tray to convert the downloaded image format from QCOW2 to VDI. Following the steps to convert image format.
 
 1. Install **qemu-utils**
-    
+
 .. code::
 
     apt-get install qemu-utils
-    
+
 2. Convert the image format:
 
 .. code::
