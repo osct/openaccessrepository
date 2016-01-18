@@ -1,4 +1,3 @@
-cat /opt/invenio/lib/python/invenio/external_authentication_sso_scigaia.py
 # -*- coding: utf-8 -*-
 ##
 ## This file is part of Invenio.
