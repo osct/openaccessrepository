@@ -127,13 +127,16 @@ or by manually editing virtual host configuration files
 (Cache will be automatically recreated based on the source file when one accesses a page. 
 You can force the creation of these pages by accessing the table of content for each section: http://yoursite.eu/help/contents, http://yoursiste.eu/help/admin/contents and http://yoursite.eu/help/hacking/contents)
 
+
 6) In order to customize categories, you must run 
 
 ::
+	
 	cd /opt/invenio/bin
 	sudo -u www-data ./bibindex
 	sudo -u www-data ./webcoll
 	sudo -u www-data ./bibsched
+	
 
 and run (r) all processes in the bibsched window
 
