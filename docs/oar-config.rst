@@ -7,11 +7,11 @@ OAR Configuration
 	.. hlist::
         	:columns: 1      
 
-		* About `Invenio <http://invenio-software.org/>`_ 
+		* About `Invenio <http://invenio.readthedocs.org/en/latest/introduction/about.html>`_ 
 
-		* Invenio `Documentation <http://invenio-software.org/wiki/General/Documentation>`_ 
+		* Invenio `Documentation <http://invenio.readthedocs.org/en/latest/introduction/index.html>`_ 
 
-		* Admin `HOWTO guides <http://invenio-demo.cern.ch/help/admin/>`_ 
+		* Admin `HOWTO guides <http://demo.invenio-software.org/help/admin/>`_ 
 
 
 
