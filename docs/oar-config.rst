@@ -140,7 +140,7 @@ You can force the creation of these pages by accessing the table of content for 
 
 and run (r) all processes in the bibsched window
 
-7) Put your `bibsched <https://github.com/osct/openaccessrepository/blob/master/docs/figures/bibsched.rst>`_  queue back to automatic mode, and you are done. (See more: `Howto Run Invenio installation <a href=https://oar.sci-gaia.eu/help/admin/howto-run>`_ )
+7) Put your `bibsched <https://github.com/osct/openaccessrepository/blob/master/docs/figures/bibsched.rst>`_  queue back to automatic mode, and you are done. (See more: `Howto Run Invenio installation <http://oar.sci-gaia.eu/help/admin/howto-run>`_ )
 
 ::
 
